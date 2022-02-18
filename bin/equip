@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const Path = require('path');
+const FS = require('fs');
+
+// Find the current working directory.
+// I've done it this way because sometimes my __dirname
+// was "undefined".
+const CWD = __dirname || (FS.realpathSync(__filename));
+
+// Resolve the dist folder where the index file is
+const distFolder = Path.resolve(CWD, '../', 'dist');
+
+// Execute the CLI
+require( Path.join(distFolder, 'index.js') ).default();

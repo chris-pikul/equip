@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Command/Terminal program for common developer tools",
   "main": "dist/index.js",
+  "bin": "./bin/equip",
   "scripts": {
-    "test": "nyc"
+    "clean": "rimraf ./dist/",
+    "lint": "npx eslint ./src/** --ext .js,.ts",
+    "test": "mocha -r ts-node/register './tests/**/*'",
+    "coverage": "nyc mocha -r ts-node/register './tests/**/*' && nyc report --reporter=html",
+    "build": "npm run lint && npm run clean && cross-env NODE_ENV=production tsc --project ./",
+    "start": "npm run build && node ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +31,19 @@
   "bugs": {
     "url": "https://github.com/chris-pikul/equip/issues"
   },
-  "homepage": "https://github.com/chris-pikul/equip#readme"
+  "homepage": "https://github.com/chris-pikul/equip#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.9.0",
+    "mocha": "^9.2.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
 }
