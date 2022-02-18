@@ -1,9 +1,11 @@
 {
-  "name": "equip",
+  "name": "equip-cli",
   "version": "0.1.0",
   "description": "Command/Terminal program for common developer tools",
   "main": "dist/index.js",
-  "bin": "./bin/equip",
+  "bin": {
+    "equip": "./bin/equip"
+  },
   "scripts": {
     "clean": "rimraf ./dist/",
     "lint": "npx eslint ./src/** --ext .js,.ts",
