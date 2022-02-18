@@ -1,0 +1,29 @@
+{
+  "name": "equip",
+  "version": "1.0.0",
+  "description": "Command/Terminal program for common developer tools",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "nyc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-pikul/equip.git"
+  },
+  "keywords": [
+    "cli",
+    "command",
+    "terminal",
+    "application",
+    "program",
+    "common",
+    "developer",
+    "tools"
+  ],
+  "author": "Chris Pikul <ChrisPikul510@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chris-pikul/equip/issues"
+  },
+  "homepage": "https://github.com/chris-pikul/equip#readme"
+}
