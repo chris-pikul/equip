@@ -1,11 +1,12 @@
 {
   "name": "equip-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Command/Terminal program for common developer tools",
   "main": "dist/index.js",
   "bin": {
     "equip": "./dist/bin/equip.js",
-    "equip-echo": "./dist/bin/equip-echo.js"
+    "equip-hash": "./dist/bin/equip-hash.js",
+    "equip-rand": "./dist/bin/equip-rand.js"
   },
   "scripts": {
     "clean": "rimraf ./dist/",
