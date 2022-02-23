@@ -4,7 +4,8 @@
   "description": "Command/Terminal program for common developer tools",
   "main": "dist/index.js",
   "bin": {
-    "equip": "./bin/equip"
+    "equip": "./dist/bin/equip.js",
+    "equip-echo": "./dist/bin/equip-echo.js"
   },
   "scripts": {
     "clean": "rimraf ./dist/",
@@ -36,7 +37,9 @@
   "homepage": "https://github.com/chris-pikul/equip#readme",
   "devDependencies": {
     "@types/chai": "^4.3.0",
+    "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.0",
+    "@types/promptly": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "chai": "^4.3.6",
@@ -47,5 +50,14 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.0.0",
+    "glob": "^7.2.0",
+    "promptly": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
