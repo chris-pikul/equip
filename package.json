@@ -1,6 +1,6 @@
 {
   "name": "equip-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command/Terminal program for common developer tools",
   "main": "dist/index.js",
   "bin": {
