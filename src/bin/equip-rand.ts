@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-import { Argument, Command, InvalidOptionArgumentError, Option, OptionValues } from 'commander';
+import crypto from 'crypto';
+
+import { Command, Option, OptionValues } from 'commander';
 
 import { getPackage } from '../common';
 import { optNumber } from '../options';
@@ -79,6 +81,20 @@ if no arguments are provided, then the default of 0 & 1 will be used.`)
     for(let i=1; i <= opts.repeat; i++) {
       const rand = (Math.random() * (max - min)) + min;
       output( opts.integer ? Math.round(rand) : rand );
+    }
+  });
+
+/**
+ * Command to generate random UUIDs
+ */
+program.command('uuid')
+  .description('generates a random UUID string')
+  .option('-r, --repeat <number>', 'repeat the generation a number of times to produce bulk amounts of random UUIDs', optNumber, 1)
+  .action((opts:OptionValues):void => {
+    const rep = opts.repeat ?? 1;
+    for(let i=1; i <= rep; i++) {
+      const val = crypto.randomUUID();
+      console.log(val);
     }
   });
 
